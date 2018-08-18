@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HikvisionPasswordResetHelper", "HikvisionPasswordResetHelper\HikvisionPasswordResetHelper.csproj", "{5584DEA6-246E-493D-AAC4-EA61A17D9893}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HikBDCheckTool", "HikBDCheckTool\HikBDCheckTool.csproj", "{5584DEA6-246E-493D-AAC4-EA61A17D9893}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
