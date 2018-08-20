@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -31,9 +32,26 @@ namespace HikBDCheckTool
 			InitializeComponent();
 			this.Text = "Hikvision Back Door Scan Tool " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 			txtIP.Focus();
+            txtIP.LostFocus += TxtIP_LostFocus;
             scanTick.Interval = 1000;
             scanTick.Tick += ScanTick_Tick;
 
+        }
+
+        private void TxtIP_LostFocus(object sender, EventArgs e)
+        {
+            if (!ValidateIPAddress(txtIP.Text))
+            {
+                MessageBox.Show("IP Address is nov valid!","Warning!");
+                txtIP.Focus();
+            }
+
+        }
+
+        public  bool ValidateIPAddress(string ipAddress)
+        {
+            Regex validipregex = new Regex(@"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$");
+            return (ipAddress != "" && validipregex.IsMatch(ipAddress.Trim())) ? true : false;
         }
 
         private void ScanTick_Tick(object sender, EventArgs e)

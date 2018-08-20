@@ -69,7 +69,7 @@
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(135, 21);
             this.txtIP.TabIndex = 1;
-            this.txtIP.Text = "192.168.2.95";
+            this.txtIP.Text = "192.168.2.1";
             // 
             // label2
             // 
