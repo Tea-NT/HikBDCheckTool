@@ -1,17 +1,24 @@
-# HikPasswordHelper
-A tool which exploits a backdoor in Hikvision camera firmwares circa 2014-2016 ([ICSA-17-124-01](http://seclists.org/fulldisclosure/2017/Sep/23)) to help the owner change a forgotten password.
+# HikBDCheckTool Base on HikPasswordHelper
+A tool which exploits a backdoor in Hikvision camera firmwares circa 2014-2016 ([ICSA-17-124-01](http://seclists.org/fulldisclosure/2017/Sep/23)) to help the owner change a forgotten password.  
+(2018-08-18) And add net segment scan function.
 
 ## Usage
 
-Download [`HikvisionPasswordResetHelper.exe` from the releases tab](https://github.com/bp2008/HikPasswordHelper/releases) and run the exe.
+Git clone the code and compile with Visual Studio 2017.  
+1 - Write the net segment you want sacn,like `192.168.1.0` means scan 192.168.1.0-192.168.1.254 ip  
+2 - Click `Scan Net` button and wait Scan finished.It will take a few minutes(depends the net environment).  
+3 - After `Scan Net..` button text change to `Scan Finished`， Click `Export` button to export xlsx file.(the exe folder)
 
+> Origin version - No scan function  
+Download [`HikvisionPasswordResetHelper.exe` from the releases tab](https://github.com/bp2008/HikPasswordHelper/releases) and run the exe.
 There are 5 simple steps to reset a password, and you can even skip steps 3 and 4 in many cases.
 
 ![Screenshot](https://i.imgur.com/3uAzhaR.png)
 
 ## Requirements
 
-.NET Framework 4.5.2 - This is included in any modern Windows installation.
+.NET Framework 4.5.2 - This is included in any modern Windows installation.  
+NPOI - A lib to export or import Excel xls/xlsx file document.  
 
 A Hikvision device that is vulnerable to [ICSA-17-124-01](http://seclists.org/fulldisclosure/2017/Sep/23).
 
